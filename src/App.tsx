@@ -18,7 +18,7 @@ const App = () => {
 
   // Inicializar MSW em desenvolvimento
   useEffect(() => {
-    if (import.meta.env.DEV) {
+    if (import.meta.env.DEV ||import.meta.env.PROD) {
       import('./mocks/browser').then(({ worker }) => {
         worker.start({
           onUnhandledRequest: 'bypass',
